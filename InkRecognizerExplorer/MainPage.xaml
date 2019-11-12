@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="InkRecognizerExplorer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Black"
+    RequestedTheme="Dark">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <CommandBar Grid.Row="0" Background="Black" Margin="12,12,0,0">
+            <CommandBar.Content>
+                <TextBlock x:Name="commandBar" FontWeight="Bold" CharacterSpacing="75" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </CommandBar.Content>
+        </CommandBar>
+
+        <NavigationView Grid.Row="1" x:Name="navView" PaneDisplayMode="Top" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Name="inkMirror" Content="Ink Mirror" FontSize="24"/>
+                <NavigationViewItem Name="formFiller" Content="Form Filler" FontSize="24"/>
+            </NavigationView.MenuItems>
+        </NavigationView>
+
+        <Frame Grid.Row="2" x:Name="frame"/>
+    </Grid>
+</Page>
